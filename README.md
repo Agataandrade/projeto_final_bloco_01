@@ -45,5 +45,5 @@ Este projeto foi criado para praticar os principais fundamentos de **lógica de 
 👩‍💻 Desenvolvedora
 Ágata de Souza Andrade
 📧 agata.andrade@icloud.com
-https://www.linkedin.com/in/agata-de-souza-andrade-53875a254/
+linkedin: https://www.linkedin.com/in/agata-de-souza-andrade-53875a254/
 
