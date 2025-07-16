@@ -1,42 +1,49 @@
 # 👙 Doce Verão - E-commerce de Biquínis
 
-Bem-vindo ao **Doce Verão**, um sistema de compras desenvolvido em TypeScript para uma loja de biquínis, onde o usuário pode escolher modelo, tamanho, cor, estampa, forma de pagamento e forma de entrega.
-
-## 🛍️ Funcionalidades
-
-- Escolha de **modelo**, **tamanho**, **cor** e **estampa**
-- Opções de **forma de entrega** (Correios ou retirada)
-- Opções de **pagamento** (Pix, Cartão, Boleto)
-- Menu interativo com entrada de dados pelo terminal
-- Visualização do pedido e opção de finalização ou cancelamento
+Bem-vinda ao **Doce Verão**, um sistema de compras desenvolvido em **TypeScript** para uma loja de biquínis.  
+Aqui, o(a) usuário(a) pode montar seu pedido escolhendo modelo, tamanho, cor, estampa, forma de entrega e pagamento, tudo de forma interativa via terminal.
 
 ---
 
-## 🧠 Conceitos Aplicados
+## Funcionalidades
 
-Este projeto foi desenvolvido com o objetivo de praticar diversos conceitos da programação orientada a objetos e da linguagem TypeScript:
+- ✅ Escolha do **modelo**, **tamanho**, **cor** e **estampa**
+- ✅ Opções de **forma de entrega** (Correios ou retirada)
+- ✅ Opções de **forma de pagamento** (Pix, Cartão, Boleto)
+- ✅ Menu interativo com entrada de dados pelo terminal
+- ✅ Visualização do pedido
+- ✅ Finalização ou cancelamento da compra
+- ✅ Cadastro de cliente com nome e data de nascimento
 
-### 💡 Lógica de Programação
-- ✅ Variáveis
+---
+
+## Conceitos Aplicados
+
+Este projeto foi criado para praticar os principais fundamentos de **lógica de programação** e **programação orientada a objetos (POO)** usando TypeScript.
+
+###  Lógica de Programação
+- ✅ Declaração de variáveis
 - ✅ Entrada e saída de dados
 - ✅ Laços condicionais (`if`, `switch`)
 - ✅ Laços de repetição (`while`)
 
-### 🔧 Programação Orientada a Objetos (POO)
+###  Programação Orientada a Objetos (POO)
 - ✅ Classes, atributos e objetos
-- ✅ Métodos e modificadores de acesso (`public`, `private`)
+- ✅ Encapsulamento com modificadores de acesso (`public`, `private`)
 - ✅ Polimorfismo
-- ✅ Herança e Sobrecarga de métodos
-- ✅ Classes abstratas e interfaces
+- ✅ Herança e sobrecarga de métodos
+- ✅ Classe abstrata (`Compra`)
+- ✅ Interface (`IResumo`)
 
-### 🧰 Outros recursos
+###  Recursos Extras
 - ✅ Collections (`Array`, `Map`, etc.)
-- ✅ Exceptions (tratamento de erros com `try/catch`)
+- ✅ Tratamento de exceções com `try/catch`
+- ✅ Estrutura modular com pastas (`model/`, `controller/`)
 
 ---
 
-## ▶️ Como Executar
+👩‍💻 Desenvolvedora
+Ágata de Souza Andrade
+📧 agata.andrade@icloud.com
+https://www.linkedin.com/in/agata-de-souza-andrade-53875a254/
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Agataandrade/projeto_final_bloco_01.git
