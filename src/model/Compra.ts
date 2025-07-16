@@ -1,4 +1,5 @@
 export abstract class Compra {
+    
     protected _modelo: string;
     protected _tamanho: string;
     protected _cor: string;

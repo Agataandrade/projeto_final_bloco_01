@@ -1,50 +1,79 @@
-import { Compra } from './Compra';
-import { IResumo } from './IResumo';
+import { Cliente } from "./Cliente";
 
-export class Pedido extends Compra implements IResumo {
+export class Pedido {
+  private _cliente: Cliente;
+  private _modelo: string = "";
+  private _tamanho: string = "";
+  private _cor: string = "";
+  private _estampa: string = "";
+  private _entrega: string = "";
+  private _pagamento: string = "";
 
-    private _estampa: string;
-    private _entrega: string;
-    private _pagamento: string;
+  constructor(cliente: Cliente) {
+    this._cliente = cliente;
+  }
 
-    constructor(modelo: string, tamanho: string, cor: string, estampa: string, entrega: string, pagamento: string) {
-        super(modelo, tamanho, cor); // Chama o construtor da classe Compra
-        this._estampa = estampa;
-        this._entrega = entrega;
-        this._pagamento = pagamento;
-    }
+ 
+  public get cliente(): Cliente {
+    return this._cliente;
+  }
 
-    public get estampa(): string {
-        return this._estampa;
-    }
+  public get modelo(): string {
+    return this._modelo;
+  }
 
-    public set estampa(estampa: string) {
-        this._estampa = estampa;
-    }
+  public set modelo(value: string) {
+    this._modelo = value;
+  }
 
-    public get entrega(): string {
-        return this._entrega;
-    }
+  public get tamanho(): string {
+    return this._tamanho;
+  }
 
-    public set entrega(entrega: string) {
-        this._entrega = entrega;
-    }
+  public set tamanho(value: string) {
+    this._tamanho = value;
+  }
 
-    public get pagamento(): string {
-        return this._pagamento;
-    }
+  public get cor(): string {
+    return this._cor;
+  }
 
-    public set pagamento(pagamento: string) {
-        this._pagamento = pagamento;
-    }
+  public set cor(value: string) {
+    this._cor = value;
+  }
 
-    public visualizar(): void {
-        console.log("\n🛍️ RESUMO DO PEDIDO:");
-        console.log(`Modelo: ${this._modelo}`);
-        console.log(`Tamanho: ${this._tamanho}`);
-        console.log(`Cor: ${this._cor}`);
-        console.log(`Estampa: ${this._estampa}`);
-        console.log(`Entrega: ${this._entrega}`);
-        console.log(`Pagamento: ${this._pagamento}`);
-    }
+  public get estampa(): string {
+    return this._estampa;
+  }
+
+  public set estampa(value: string) {
+    this._estampa = value;
+  }
+
+  public get entrega(): string {
+    return this._entrega;
+  }
+
+  public set entrega(value: string) {
+    this._entrega = value;
+  }
+
+  public get pagamento(): string {
+    return this._pagamento;
+  }
+
+  public set pagamento(value: string) {
+    this._pagamento = value;
+  }
+
+  public visualizar(): void {
+    console.log("\n🛍️  RESUMO DO PEDIDO:");
+    console.log(`Cliente: ${this._cliente.nome} (${this._cliente.dataNascimento})`);
+    console.log(`Modelo: ${this._modelo}`);
+    console.log(`Tamanho: ${this._tamanho}`);
+    console.log(`Cor: ${this._cor}`);
+    console.log(`Estampa: ${this._estampa}`);
+    console.log(`Entrega: ${this._entrega}`);
+    console.log(`Pagamento: ${this._pagamento}`);
+  }
 }
