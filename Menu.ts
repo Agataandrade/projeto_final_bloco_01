@@ -1,5 +1,4 @@
-import redlinesync = require("readline-sync");
-
+export class Pedido {}
 const readlineSync = require('readline-sync');
 
 
@@ -40,7 +39,7 @@ export function main() {
         cor = readlineSync.question("Cor desejada: ");
         break;
       case 4:
-        estampa = readlineSync.question("Estampa (Liso, Floral, etc.): ");
+        estampa = readlineSync.question("Estampa (Liso, Floral, Listrado, etc.): ");
         break;
       case 5:
         entrega = readlineSync.question("Entrega (Correios ou Retirada): ");
