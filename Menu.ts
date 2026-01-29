@@ -1,22 +1,23 @@
-import redlinesync = require("readline-sync");
+import { Pedido } from './src/model/Pedido';
+import { Cliente } from './src/model/Cliente';
+
 
 const readlineSync = require('readline-sync');
-
+const pedidos: Pedido[] = [];
 
 main();
 
 export function main() {
-  let modelo: string = "";
-  let tamanho: string = "";
-  let cor: string = "";
-  let estampa: string = "";
-  let entrega: string = "";
-  let pagamento: string = "";
-
+  console.log("\n👙 Olá, seja bem-vinda à Doce Verão! Vamos montar seu pedido! 👙\n");
+  let nome = readlineSync.question("Digite seu nome: ");
+  let dataNascimento = readlineSync.question("Digite sua data de nascimento (dd/mm/aaaa): ");
+  let cliente = new Cliente(nome, dataNascimento);
+  let pedidoAtual = new Pedido(cliente);
   let opcao = 0;
 
   while (opcao !== 9) {
     console.log("\n🌴 DOCE VERÃO - MENU DE COMPRAS 🌴");
+    console.log("0 - Alterar nome e data de nascimento");
     console.log("1 - Escolher modelo");
     console.log("2 - Escolher tamanho");
     console.log("3 - Escolher cor");
@@ -30,43 +31,55 @@ export function main() {
     opcao = parseInt(readlineSync.question("Escolha uma opção: "));
 
     switch (opcao) {
+      case 0:
+        nome = readlineSync.question("Novo nome: ");
+        dataNascimento = readlineSync.question("Nova data de nascimento: ");
+        cliente = new Cliente(nome, dataNascimento);
+        pedidoAtual = new Pedido(cliente); 
+        console.log("✅ Dados atualizados!");
+        break;
       case 1:
-        modelo = readlineSync.question("Modelo desejado: ");
+        pedidoAtual.modelo = readlineSync.question("Modelo desejado: ");
         break;
       case 2:
-        tamanho = readlineSync.question("Tamanho (P/M/G/GG): ");
+        pedidoAtual.tamanho = readlineSync.question("Tamanho (P/M/G/GG): ");
         break;
       case 3:
-        cor = readlineSync.question("Cor desejada: ");
+        pedidoAtual.cor = readlineSync.question("Cor desejada: ");
         break;
       case 4:
-        estampa = readlineSync.question("Estampa (Liso, Floral, etc.): ");
+        pedidoAtual.estampa = readlineSync.question("Estampa (Liso, Floral, listra, etc.):  ");
         break;
       case 5:
-        entrega = readlineSync.question("Entrega (Correios ou Retirada): ");
+        pedidoAtual.entrega = readlineSync.question("Forma de entrega (Correios ou Retirada):  ");
         break;
       case 6:
-        pagamento = readlineSync.question("Pagamento (Pix, Cartão, Boleto): ");
+        pedidoAtual.pagamento = readlineSync.question("Forma de pagamento (Pix, Cartão, Boleto): ");
         break;
       case 7:
-        console.log("\n🛒 RESUMO DO PEDIDO:");
-        console.log(`Modelo: ${modelo}`);
-        console.log(`Tamanho: ${tamanho}`);
-        console.log(`Cor: ${cor}`);
-        console.log(`Estampa: ${estampa}`);
-        console.log(`Entrega: ${entrega}`);
-        console.log(`Pagamento: ${pagamento}`);
-        console.log("\n✅ Pedido finalizado com sucesso!");
+        try {
+          pedidos.push(pedidoAtual);
+          pedidoAtual.visualizar();
+          console.log("✅ Pedido finalizado com sucesso!");
+          pedidoAtual = new Pedido(cliente); 
+        } catch (error: any) {
+          console.log("🚨 Erro ao finalizar pedido:", error.message);
+        }
         break;
       case 8:
-        modelo = tamanho = cor = estampa = entrega = pagamento = "";
-        console.log("Compra cancelada.");
+        pedidoAtual = new Pedido(cliente); 
+        console.log("❌ Pedido cancelado.");
         break;
       case 9:
-        console.log("Volte sempre! 🌊");
+        console.log("\n🧾 Pedidos realizados:");
+        pedidos.forEach((p, index) => {
+          console.log(`\n📦 Pedido ${index + 1}`);
+          p.visualizar();
+        });
+        console.log("🌊 Volte sempre!");
         break;
       default:
-        console.log("Opção inválida.");
+        console.log("⚠️ Opção inválida.");
     }
   }
 }
